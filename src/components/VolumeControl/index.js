@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-class VolumeControl extends Component {
+export default class VolumeControl extends Component {
   state = {
     volume: "0.0",
-    step: 2
+    step: 0
   };
 
   componentDidMount = () => {
@@ -37,7 +37,7 @@ class VolumeControl extends Component {
       <div>
         <select onChange={this.changeStep}>
           {this.props.steps.map(step => (
-            <option value={step}>{step}</option>
+            <option>{step}</option>
           ))}
         </select>
         <h1>
@@ -50,5 +50,3 @@ class VolumeControl extends Component {
     );
   }
 }
-
-export default VolumeControl;
